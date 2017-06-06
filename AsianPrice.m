@@ -1,7 +1,9 @@
 %Asian Option Pricing
 
 function [AsianCall,AsianPut]=AsianPrice(S0,K,r,vol,T,dt,Nrows)
-%Set Constants
+
+%Nrows is the number of realizations or paths, i.e. Nrows == N.
+
 tic
     
 %Pre-calculate as many parameters as possible
