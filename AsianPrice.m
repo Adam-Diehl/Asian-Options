@@ -6,7 +6,7 @@ function [AsianCall,AsianPut]=AsianPrice(S0,K,r,vol,T,dt,Nrows)
 
 tic
     
-%Pre-calculate as many parameters as possible
+%Pre-calculate parameters
     Ncols = T/dt;
     drift = (r-((vol^2)/2))*dt; 
     part_stoch_part = vol*sqrt(dt); 
@@ -21,8 +21,6 @@ tic
     S = cumprod(S,2);
     S = S0*S;
     S(:,1) = S0;
-
-clear random; %Free up a chunk of RAM
 
 %Calculate Asian Option Prices
     %Asian Call
